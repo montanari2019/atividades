@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
 <body>
-    <h1>{{ titulo }}</h1>
-    <ul>
-        {% for e in eventos %}
-        <li>{{ e }}</li>
-        {% endfor %}
-
+    <h1 class="text-center mt-4">{{ titulo }}</h1>
+    <div class="container card mt-4">
+        {% for e in user %}
+            <ul class="list-group m-4">
+                <li class="list-group-item">{{ e.nome }} <span class="badge badge-info">{{ e.id }}</span></li>
+                 <li class="list-group-item">{{ e.email }}</li>
 <!--        <li>Semana de arquitetura</li>-->
-    </ul>
+            </ul>
+         {% endfor %}
+    </div>
 </body>
 </html>
